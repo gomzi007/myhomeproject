@@ -1,0 +1,8 @@
+---
+ - hosts: webservers
+   become: true
+   tasks:
+    - name: copy war onto tomcat server
+      copy:
+        src: /etc/ansible/playbooks/dist/AntExample.war
+        dest: /root/apache-tomcat-7.0.96/webapps
